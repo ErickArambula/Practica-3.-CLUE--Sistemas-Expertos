@@ -76,7 +76,7 @@ public class CLUE extends JFrame implements ActionListener{
 	botonContinuar2.addActionListener(this);
 	botonEmpezar.addActionListener(this);
 
-	botonPersonaje.addActionListener(this);
+	/*botonPersonaje.addActionListener(this);
 	botonLugar.addActionListener(this);
 	botonArma.addActionListener(this); 
 
@@ -94,10 +94,7 @@ public class CLUE extends JFrame implements ActionListener{
 	botonPflorinda.addActionListener(this); 
 	botonPramon.addActionListener(this); 
 	botonPquico.addActionListener(this); 
-	botonPchilindrina.addActionListener(this);
-
-
-
+	botonPchilindrina.addActionListener(this);*/
 
   }//Fin del constructor 
 //---------------------------------------------------------------------------
