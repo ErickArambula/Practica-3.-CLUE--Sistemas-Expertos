@@ -83,6 +83,11 @@ public class CLUE extends JFrame implements ActionListener{
 	add(botonPersonaje);
 	botonPersonaje.setVisible(false);
 
+	botonVolver = new JButton("Volver");
+	botonVolver.setBounds(380, 130, 100, 25);
+	add(botonVolver);
+	botonVolver.setVisible(false);
+
 
 
 //--------------------BOTONES DE PISTAS----------------------
@@ -173,6 +178,7 @@ public class CLUE extends JFrame implements ActionListener{
 	botonContinuar.addActionListener(this);
 	botonContinuar2.addActionListener(this);
 	botonEmpezar.addActionListener(this);
+	botonVolver.addActionListener(this);
 
 
 	botonPersonaje.addActionListener(this);
@@ -235,6 +241,7 @@ public class CLUE extends JFrame implements ActionListener{
 	}
 
 	if(accion.getSource() == botonLugar){
+	  botonVolver.setVisible(true);
 	  botonLugar.setVisible(false);
 	  botonArma.setVisible(false);
 	  botonPersonaje.setVisible(false);
@@ -248,6 +255,7 @@ public class CLUE extends JFrame implements ActionListener{
 	}
 
 	if(accion.getSource() == botonArma){
+	  botonVolver.setVisible(true);
 	  botonLugar.setVisible(false);
 	  botonArma.setVisible(false);
 	  botonPersonaje.setVisible(false);
@@ -261,6 +269,7 @@ public class CLUE extends JFrame implements ActionListener{
 	}
 
 	if(accion.getSource() == botonPersonaje){
+	  botonVolver.setVisible(true);
 	  botonLugar.setVisible(false);
 	  botonArma.setVisible(false);
 	  botonPersonaje.setVisible(false);
@@ -271,6 +280,33 @@ public class CLUE extends JFrame implements ActionListener{
 	  botonPquico.setVisible(true);
 	  botonPchilindrina.setVisible(true);
 	  etiqueta3.setText("Que arma quieres investigar ??");
+	}
+
+	if(accion.getSource() == botonVolver){
+	  botonVolver.setVisible(false);
+	  botonLugar.setVisible(true);
+	  botonArma.setVisible(true);
+	  botonPersonaje.setVisible(true);
+
+
+	  botonLbarril.setVisible(false);
+	  botonLcasaDR.setVisible(false);
+	  botonLcasaDF.setVisible(false);
+	  botonLpatio.setVisible(false);
+	  botonLcasaB71.setVisible(false);
+
+	  botonAchip.setVisible(false);
+	  botonApelota.setVisible(false);
+	  botonAescoba.setVisible(false);
+	  botonAcuchillo.setVisible(false);
+	  botonAvalero.setVisible(false);
+
+	  botonPchavo.setVisible(false);
+	  botonPflorinda.setVisible(false);
+	  botonPramon.setVisible(false);
+	  botonPquico.setVisible(false);
+	  botonPchilindrina.setVisible(false);
+	  etiqueta3.setText("Que quieres investigar ??");
 	}
 
 
