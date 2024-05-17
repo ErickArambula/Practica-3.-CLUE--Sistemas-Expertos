@@ -4,9 +4,10 @@ import java.awt.*; //Necesario para manejar color, font e imagen
 
 public class CLUE extends JFrame implements ItemListener, ActionListener{
 
-  public JLabel etiquetaIMG, etiqueta1, etiqueta2, etiqueta3;
-  public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver;
+  public JLabel etiquetaIMG, etiqueta1, etiqueta2, etiqueta3, etiquetaIncriminar;
+  public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver,botonIncriminar;
   public JComboBox <String> comboLugar, comboPersonaje, comboArma;
+  int asesino, inocente;
   
 
 //********************************CONSTRUCTOR*******************************
@@ -45,6 +46,12 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	etiqueta3.setForeground(Color.WHITE);
 	add(etiqueta3);
 
+	etiquetaIncriminar = new JLabel("Selecciona al culpable...");
+	etiquetaIncriminar.setBounds(10, 350, 900, 30); // x, y, ancho, alto
+	etiquetaIncriminar.setFont(fuente3);
+	etiquetaIncriminar.setForeground(Color.WHITE);
+	add(etiquetaIncriminar);
+	etiquetaIncriminar.setVisible(false);
 
 
 	boton = new JButton("JUGAR");
@@ -90,12 +97,16 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	add(botonVolver);
 	botonVolver.setVisible(false);
 
+	botonIncriminar = new JButton("Incriminar !!");
+	botonIncriminar.setBounds(40,510,100,25);
+	add(botonIncriminar);
+	botonIncriminar.setVisible(false);
 
 
 	comboLugar = new JComboBox<String>();
 	comboLugar.setBounds(20,400,140,25);
 	add(comboLugar);
-	//comboLugar.setVisible(false);
+	comboLugar.setVisible(false);
 
 	comboLugar.setEditable(true);
 	comboLugar.setSelectedItem("Lugar:");
@@ -110,7 +121,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	comboArma = new JComboBox<String>();
 	comboArma.setBounds(20,435,140,25);
 	add(comboArma);
-	//comboArma.setVisible(false);
+	comboArma.setVisible(false);
 
 	comboArma.setEditable(true);
 	comboArma.setSelectedItem("Arma:");
@@ -125,7 +136,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	comboPersonaje = new JComboBox<String>();
 	comboPersonaje.setBounds(20,470,140,25);
 	add(comboPersonaje);
-	//comboPersonaje.setVisible(false);
+	comboPersonaje.setVisible(false);
 
 	comboPersonaje.setEditable(true);
 	comboPersonaje.setSelectedItem("Personaje:");
@@ -227,6 +238,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	botonContinuar2.addActionListener(this);
 	botonEmpezar.addActionListener(this);
 	botonVolver.addActionListener(this);
+	botonIncriminar.addActionListener(this);
 
 
 	botonPersonaje.addActionListener(this);
@@ -309,6 +321,11 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLugar.setVisible(true);
 	  botonArma.setVisible(true);
 	  botonPersonaje.setVisible(true);
+	  botonIncriminar.setVisible(true);
+	  comboLugar.setVisible(true);
+	  comboArma.setVisible(true);
+	  comboPersonaje.setVisible(true);
+	  etiquetaIncriminar.setVisible(true);
 	  etiqueta3.setText("Que quieres investigar ??");
 	}
 
@@ -392,6 +409,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	CLUE ventana = new CLUE();
 	ventana.setBounds(150, 150, 1000, 650);
  	ventana.setVisible(true);	
+ 	ventana.setResizable(false);
 
   }//Fin del metodo main 
 //-------------------------------------------------------------------------------
