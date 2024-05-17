@@ -2,10 +2,12 @@ import javax.swing.*;   //Necesario para diseñar ventanas
 import java.awt.event.*; //Necesario para disparar eventos
 import java.awt.*; //Necesario para manejar color, font e imagen
 
-public class CLUE extends JFrame implements ActionListener{
+public class CLUE extends JFrame implements ItemListener, ActionListener{
 
   public JLabel etiquetaIMG, etiqueta1, etiqueta2, etiqueta3;
   public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver;
+  public JComboBox <String> combo1;
+  
 
 //********************************CONSTRUCTOR*******************************
   public CLUE (){
@@ -87,6 +89,22 @@ public class CLUE extends JFrame implements ActionListener{
 	botonVolver.setBounds(380, 130, 100, 25);
 	add(botonVolver);
 	botonVolver.setVisible(false);
+
+	combo1 = new JComboBox<String>();
+	combo1.setBounds(20,60,90,20);
+	add(combo1);
+	//combo1.setVisible(false);
+
+	combo1.setEditable(true);
+	combo1.setSelectedItem("Lugar");
+	combo1.setEditable(false);
+	combo1.addItem("Blanco");
+	combo1.addItem("Negro");
+	combo1.addItem("Azul");
+	combo1.addItem("Rojo");
+	combo1.addItem("Naranja");
+
+
 
 
 
@@ -201,9 +219,31 @@ public class CLUE extends JFrame implements ActionListener{
 	botonPquico.addActionListener(this); 
 	botonPchilindrina.addActionListener(this);
 
+	combo1.addItemListener(this);
+
 
   }//Fin del constructor 
 //---------------------------------------------------------------------------
+
+//**************************METODO ITEM STATE CHANGED*************************
+
+  public void itemStateChanged(ItemEvent accion){
+	/*
+	v1="PANTALON"+"\n"+"---"+combo1.getSelectedItem().toString();
+  	v2="\n"+"---"+combo2.getSelectedItem().toString();
+  	v3="\n"+"---"+combo3.getSelectedItem().toString();
+  	v4="\n"+"CAMISAS"+"\n"+"---"+combo4.getSelectedItem().toString();
+  	v5="\n"+"---"+combo5.getSelectedItem().toString();
+ 	v6="\n"+"---"+combo6.getSelectedItem().toString();
+ 	v7="\n"+"CALCETAS"+"\n"+"---"+combo7.getSelectedItem().toString();
+  	v8="\n"+"ROPA INFANTIL"+"\n"+"---"+combo8.getSelectedItem().toString();
+  	v9="\n"+"---"+combo9.getSelectedItem().toString();
+	*/
+  	//etiqueta.setText
+
+  }//FIn de itemStateChanged
+
+//----------------------------------------------------------------------------
 
 //**************************METODO ACTION PERFORMED***************************
 
