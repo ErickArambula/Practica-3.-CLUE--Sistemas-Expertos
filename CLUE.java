@@ -6,7 +6,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 
   public JLabel etiquetaIMG, etiqueta1, etiqueta2, etiqueta3;
   public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver;
-  public JComboBox <String> combo1;
+  public JComboBox <String> comboLugar, comboPersonaje, comboArma;
   
 
 //********************************CONSTRUCTOR*******************************
@@ -90,21 +90,51 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	add(botonVolver);
 	botonVolver.setVisible(false);
 
-	combo1 = new JComboBox<String>();
-	combo1.setBounds(20,60,90,20);
-	add(combo1);
-	//combo1.setVisible(false);
-
-	combo1.setEditable(true);
-	combo1.setSelectedItem("Lugar");
-	combo1.setEditable(false);
-	combo1.addItem("Blanco");
-	combo1.addItem("Negro");
-	combo1.addItem("Azul");
-	combo1.addItem("Rojo");
-	combo1.addItem("Naranja");
 
 
+	comboLugar = new JComboBox<String>();
+	comboLugar.setBounds(20,400,140,25);
+	add(comboLugar);
+	//comboLugar.setVisible(false);
+
+	comboLugar.setEditable(true);
+	comboLugar.setSelectedItem("Lugar:");
+	comboLugar.setEditable(false);
+	comboLugar.addItem("Barril del cahvo");
+	comboLugar.addItem("Casa de Don Ramon");
+	comboLugar.addItem("Casa de Dona Florinda");
+	comboLugar.addItem("Patio principal");
+	comboLugar.addItem("Casa de la bruja del 71");
+
+
+	comboArma = new JComboBox<String>();
+	comboArma.setBounds(20,435,140,25);
+	add(comboArma);
+	//comboArma.setVisible(false);
+
+	comboArma.setEditable(true);
+	comboArma.setSelectedItem("Arma:");
+	comboArma.setEditable(false);
+	comboArma.addItem("Chipote chillon");
+	comboArma.addItem("Pelota cuadrada");
+	comboArma.addItem("Escoba voladora");
+	comboArma.addItem("Cuchillo que no corta");
+	comboArma.addItem("Valero de Quico");
+
+
+	comboPersonaje = new JComboBox<String>();
+	comboPersonaje.setBounds(20,470,140,25);
+	add(comboPersonaje);
+	//comboPersonaje.setVisible(false);
+
+	comboPersonaje.setEditable(true);
+	comboPersonaje.setSelectedItem("Personaje:");
+	comboPersonaje.setEditable(false);
+	comboPersonaje.addItem("Chavo del 8");
+	comboPersonaje.addItem("Dona Florinda");
+	comboPersonaje.addItem("Don Ramon");
+	comboPersonaje.addItem("Quico");
+	comboPersonaje.addItem("La Chilindrina");
 
 
 
@@ -219,7 +249,9 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	botonPquico.addActionListener(this); 
 	botonPchilindrina.addActionListener(this);
 
-	combo1.addItemListener(this);
+	comboLugar.addItemListener(this);
+	comboArma.addItemListener(this);
+	comboPersonaje.addItemListener(this);
 
 
   }//Fin del constructor 
@@ -319,7 +351,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonPramon.setVisible(true);
 	  botonPquico.setVisible(true);
 	  botonPchilindrina.setVisible(true);
-	  etiqueta3.setText("Que arma quieres investigar ??");
+	  etiqueta3.setText("Que personaje quieres investigar ??");
 	}
 
 	if(accion.getSource() == botonVolver){
