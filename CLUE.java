@@ -7,8 +7,9 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
   public JLabel etiquetaIMG, etiqueta1, etiqueta2, etiqueta3, etiquetaIncriminar;
   public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver,botonIncriminar;
   public JComboBox <String> comboLugar, comboPersonaje, comboArma;
-  int asesino, inocente;
-  
+  int asesino = 0;
+  int inocente = 0;
+  int kk;
 
 //********************************CONSTRUCTOR*******************************
   public CLUE (){
@@ -98,7 +99,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	botonVolver.setVisible(false);
 
 	botonIncriminar = new JButton("Incriminar !!");
-	botonIncriminar.setBounds(40,510,100,25);
+	botonIncriminar.setBounds(40,510,115,25);
 	add(botonIncriminar);
 	botonIncriminar.setVisible(false);
 
@@ -272,12 +273,13 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 //**************************METODO ITEM STATE CHANGED*************************
 
   public void itemStateChanged(ItemEvent accion){
-	/*
-	v1="PANTALON"+"\n"+"---"+combo1.getSelectedItem().toString();
-  	v2="\n"+"---"+combo2.getSelectedItem().toString();
+
+	asesino = comboLugar.getSelectedItem() = 1;
+  	/*
+	v2="\n"+"---"+combo2.getSelectedItem().toString();
   	v3="\n"+"---"+combo3.getSelectedItem().toString();
   	v4="\n"+"CAMISAS"+"\n"+"---"+combo4.getSelectedItem().toString();
-  	v5="\n"+"---"+combo5.getSelectedItem().toString();
+  	v5="\n"+"---"+combo5.getSelectedItem().toString();1
  	v6="\n"+"---"+combo6.getSelectedItem().toString();
  	v7="\n"+"CALCETAS"+"\n"+"---"+combo7.getSelectedItem().toString();
   	v8="\n"+"ROPA INFANTIL"+"\n"+"---"+combo8.getSelectedItem().toString();
