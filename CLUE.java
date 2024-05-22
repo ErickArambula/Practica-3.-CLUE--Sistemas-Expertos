@@ -274,7 +274,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 
   public void itemStateChanged(ItemEvent accion){
 
-	asesino = comboLugar.getSelectedItem() = 1;
+	//asesino = comboLugar.getSelectedItem() = 1;
   	/*
 	v2="\n"+"---"+combo2.getSelectedItem().toString();
   	v3="\n"+"---"+combo3.getSelectedItem().toString();
@@ -398,6 +398,11 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonPquico.setVisible(false);
 	  botonPchilindrina.setVisible(false);
 	  etiqueta3.setText("Que quieres investigar ??");
+	}
+
+	if(accion.getSource() == botonLcasaB71){
+	  asesino = 1;
+	  System.out.println(asesino);
 	}
 
 
