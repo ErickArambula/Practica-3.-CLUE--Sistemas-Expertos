@@ -11,6 +11,12 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
   int inocente = 0;
   int kk;
 
+//*************************VARIABLES DE TEXTO********************************
+
+  public String chavo, donaFlorinda, donRamon, quico, chilindrina, Barril, casaDR, casaDF, patio, casaB71, chipoteCH, pelotaC, escoba, cuchillo, valero;
+
+//---------------------------------------------------------------------------
+
 //********************************CONSTRUCTOR*******************************
   public CLUE (){
 	setLayout(null);
@@ -403,6 +409,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	if(accion.getSource() == botonLcasaB71){
 	  asesino = 1;
 	  System.out.println(asesino);
+	  System.out.println(inocente);
 	}
 
 
