@@ -10,7 +10,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
   public JButton boton, botonSalir, botonContinuar, botonContinuar2, botonEmpezar, botonPersonaje, botonLugar, botonArma, botonLbarril, botonLcasaDR, botonLcasaDF, botonLpatio, botonLcasaB71, botonAchip, botonApelota, botonAescoba, botonAcuchillo, botonAvalero, botonPchavo, botonPflorinda, botonPramon, botonPquico, botonPchilindrina, botonVolver,botonIncriminar,botonJDN;
   public JComboBox <String> comboLugar, comboPersonaje, comboArma;
   int contIncriminar = 0;
-  public String cadena1, cadena2, cadena3, cadena4, cadena5;
+  public String cadena1, cadena2, cadena3, cadena4, cadena5, v1, v2, v3;
 
 /*
   int inocente = 0
@@ -334,7 +334,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 
   public void itemStateChanged(ItemEvent accion){
 
-	//asesino = comboLugar.getSelectedItem() = 1;
+	v1 = comboLugar.getSelectedItem().toString() + ",  " + comboArma.getSelectedItem().toString() + ",  " + comboPersonaje.getSelectedItem().toString();
   	/*
 	v2="\n"+"---"+combo2.getSelectedItem().toString();
   	v3="\n"+"---"+combo3.getSelectedItem().toString();
@@ -354,6 +354,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 //**************************METODO ACTION PERFORMED*****************************************************************************************************
 
   public void actionPerformed(ActionEvent accion){
+	String cadenaR= v1+v2+v3; 
 
 	if(accion.getSource() == botonSalir){
 	  System.exit(0);
@@ -402,7 +403,7 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  //randomNumber1 = random.nextInt(5) + 1;
 	  contIncriminar = 0;
 
-	  System.out.println(randomNumber1 + "\n");
+	  System.out.println("\n" + randomNumber1 + "\n");
 	}
 
 	if(accion.getSource() == botonLugar){
@@ -517,7 +518,25 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  etiquetaIncriminar.setVisible(false);
 	  botonIncriminar.setVisible(false);
 	  botonJDN.setVisible(true);
-	  etiqueta3.setText("//////");
+
+		if(randomNumber1 == 1){
+		  etiqueta2.setText("El asesino es: El chavo del 8 en el Barril con el chipote chillon");
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText("El asesino es: Dona Florinda en el Barril con el chipote chillon");
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText("El asesino es: Don Ramon en el Barril con el chipote chillon");
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText("El asesino es: Quico en el Barril con el chipote chillon");
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText("El asesino es: La chilindrina en el Barril con el chipote chillon");
+		}
+
+	  etiqueta3.setText("Tu respuesta fue: " + cadenaR);
+	  etiqueta2.setVisible(true);
 	}
 
 	
@@ -536,6 +555,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLcasaB71.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
 
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena5);
+		}
+
+	  System.out.println(randomNumber1);
+
 	  contIncriminar = contIncriminar + 1;
 	}
 
@@ -551,6 +588,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLpatio.setVisible(false);
 	  botonLcasaB71.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
+
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena1);
+		}
+
+	  System.out.println(randomNumber1);
 
 	  contIncriminar = contIncriminar + 1;
 	}
@@ -568,6 +623,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLcasaB71.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
 
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena2);
+		}
+
+	  System.out.println(randomNumber1);
+
 	  contIncriminar = contIncriminar + 1;
 	}
 
@@ -584,6 +657,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLcasaB71.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
 
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena3);
+		}
+
+	  System.out.println(randomNumber1);
+
 	  contIncriminar = contIncriminar + 1;
 	}
 
@@ -599,6 +690,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonLpatio.setVisible(false);
 	  botonLcasaB71.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
+
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena4);
+		}
+
+	  System.out.println(randomNumber1);
 
 	  contIncriminar = contIncriminar + 1;
 	}
@@ -619,6 +728,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonAvalero.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
 
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena5);
+		}
+
+	  System.out.println(randomNumber1);
+
 	  contIncriminar = contIncriminar + 1;
 	}
 
@@ -634,6 +761,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonAcuchillo.setVisible(false);
 	  botonAvalero.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
+
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena1);
+		}
+
+	  System.out.println(randomNumber1);
 
 	  contIncriminar = contIncriminar + 1;
 	}
@@ -651,6 +796,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonAvalero.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
 
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena3);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena2);
+		}
+
+	  System.out.println(randomNumber1);
+
 	  contIncriminar = contIncriminar + 1;
 	}
 
@@ -666,6 +829,24 @@ public class CLUE extends JFrame implements ItemListener, ActionListener{
 	  botonAcuchillo.setVisible(false);
 	  botonAvalero.setVisible(false);
 	  etiqueta3.setText("Que mas quieres investigar ??");
+
+		if(randomNumber1 == 1){
+		  etiqueta2.setText(cadena4);
+		}
+		if(randomNumber1 == 2){
+		  etiqueta2.setText(cadena5);
+		}
+		if(randomNumber1 == 3){
+		  etiqueta2.setText(cadena1);
+		}
+		if(randomNumber1 == 4){
+		  etiqueta2.setText(cadena2);
+		}
+		if(randomNumber1 == 5){
+		  etiqueta2.setText(cadena3);
+		}
+
+	  System.out.println(randomNumber1);
 
 	  contIncriminar = contIncriminar + 1;
 	}
